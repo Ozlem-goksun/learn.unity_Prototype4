@@ -19,6 +19,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -5 )
+        {
+            Destroy(gameObject);
+        }
+
         Vector3 lookDistance = (player.transform.position - transform.position).normalized;
 
         enemyRb.AddForce( lookDistance *  speed);
